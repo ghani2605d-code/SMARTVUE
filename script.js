@@ -20,7 +20,12 @@
   searchPanel.addEventListener('click', e => { if (e.target === searchPanel) closeSearch() });
   searchInput.addEventListener('input', () => { const q = searchInput.value.trim().toLowerCase(); $$('.product').forEach(card => card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none') });
   searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') { closeSearch(); $('#collection').scrollIntoView({ behavior: 'smooth' }) } });
-  $('#menuToggle').addEventListener('click', () => $('#mainNav').classList.toggle('mobile-open'));
+  const menuToggle = $('#menuToggle');
+  const closeMenu = () => { $('#mainNav').classList.remove('mobile-open'); menuToggle.setAttribute('aria-expanded', 'false'); };
+  menuToggle.addEventListener('click', () => {
+    const open = $('#mainNav').classList.toggle('mobile-open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
   $$('#mainNav a').forEach(link => link.addEventListener('click', () => { $$('#mainNav a').forEach(a => a.classList.remove('active')); link.classList.add('active'); $('#mainNav').classList.remove('mobile-open') }));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeSearch(); $('#mainNav').classList.remove('mobile-open') } });
   const reveal = $$('.trust-item,.section-head,.product,.feature-band,.cta'); reveal.forEach(el => el.classList.add('reveal'));
