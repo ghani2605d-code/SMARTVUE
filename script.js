@@ -26,8 +26,8 @@
     const open = $('#mainNav').classList.toggle('mobile-open');
     menuToggle.setAttribute('aria-expanded', String(open));
   });
-  $$('#mainNav a').forEach(link => link.addEventListener('click', () => { $$('#mainNav a').forEach(a => a.classList.remove('active')); link.classList.add('active'); $('#mainNav').classList.remove('mobile-open') }));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeSearch(); $('#mainNav').classList.remove('mobile-open') } });
+  $('#mainNav a').forEach(link => link.addEventListener('click', () => { $('#mainNav a').forEach(a => a.classList.remove('active')); link.classList.add('active'); closeMenu(); }));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeSearch(); closeMenu(); } });
   const reveal = $$('.trust-item,.section-head,.product,.feature-band,.cta'); reveal.forEach(el => el.classList.add('reveal'));
   if ('IntersectionObserver' in window) { const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target) } }), { threshold: .12 }); reveal.forEach(el => obs.observe(el)) }
   else reveal.forEach(el => el.classList.add('is-visible'));
