@@ -41,13 +41,14 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="scroll-progress" id="scrollProgress"></div>
   <div class="announcement">SMARTVUE EXCLUSIVE COLLECTION &nbsp; • &nbsp; <strong>TECHNOLOGY MEETS TIMELESS
       DESIGN</strong></div>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#">SMART<span>VUE</span><small>SMART WATCHES</small></a>
-      <nav class="links" id="mainNav"><a class="active" href="#home">Home</a><a href="#features">Features</a><a
+      <nav class="links" id="mainNav" aria-label="Main navigation"><a class="active" href="#home">Home</a><a href="#features">Features</a><a
           href="#collection">Pricing</a><a href="#footer">Support</a></nav>
       <div class="nav-actions"><button class="icon-btn" id="searchOpen" aria-label="Search">⌕</button><button
           class="icon-btn cart-wrap" id="cartOpen" aria-label="Shopping cart">🛒<span class="cart-count"
@@ -55,7 +56,7 @@
           aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false">☰</button><a class="primary" href="#collection">Get started ↗</a></div>
     </div>
   </header>
-  <main class="wrap">
+  <main class="wrap" id="main-content">
     <section class="hero" id="home">
       <div class="hero-copy">
         <div class="eyebrow">Designed for your every moment</div>
@@ -68,7 +69,7 @@
       <div class="hero-art">
         <div class="watch-stage"><img
             src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
-            alt="Premium black wristwatch"></div>
+            alt="Premium black wristwatch" fetchpriority="high" decoding="async"></div>
         <div class="floating-tag">✦ &nbsp; Precision in every second</div>
       </div>
     </section>
