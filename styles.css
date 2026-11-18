@@ -1364,3 +1364,20 @@ button, .primary, .secondary, .outline-btn { min-height: 44px; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
 }
+
+
+/* SEO/mobile UX finishing details */
+html { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body { overflow-x: clip; }
+img { max-width: 100%; }
+a, button, input { touch-action: manipulation; }
+button, .primary, .secondary, .outline-btn { min-height: 44px; }
+.seo-copy { max-width: 850px; margin: 0 auto 58px; padding: 0 8px; color: var(--muted); line-height: 1.8; }
+.seo-copy h2 { margin: 8px 0 14px; color: var(--text); font-family: Manrope, sans-serif; font-size: clamp(24px, 4vw, 34px); line-height: 1.2; }
+.seo-copy p { margin: 0 0 12px; }
+@media (max-width: 560px) {
+  .seo-copy { margin: 0 auto 42px; padding: 0 4px; font-size: 14px; line-height: 1.75; }
+  .seo-copy h2 { font-size: 25px; }
+  .nav-actions .icon-btn, .nav-actions .menu-toggle { min-width: 44px; min-height: 44px; }
+  .product-info .outline-btn { width: 100%; }
+}
